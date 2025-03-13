@@ -1,0 +1,36 @@
+﻿<Window x:Class="A2PatriciaGariando.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:A2PatriciaGariando"
+        mc:Ignorable="d"
+        Title="C Sharpeners &amp; Associates" Height="475" Width="775" Loaded="Window_Loaded">
+    <Canvas>
+        <Label Content="Attorneys:" Canvas.Left="20" Canvas.Top="22" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <ComboBox x:Name="cmbAttorneysLastName" Canvas.Left="84" Canvas.Top="23" Width="150" HorizontalAlignment="Center" VerticalAlignment="Top" Height="25" SelectionChanged="cmbAttorneys_SelectionChanged"/>
+        <Label Content="Clients:" Canvas.Left="36" Canvas.Top="57" RenderTransformOrigin="0.728,0.641" HorizontalAlignment="Center" VerticalAlignment="Top" Height="25"/>
+        <TextBox x:Name="txtFindClientName" Canvas.Left="84" TextWrapping="Wrap" Canvas.Top="57" Width="96" HorizontalAlignment="Center" VerticalAlignment="Center" Height="25" VerticalContentAlignment="Center" />
+        <Button x:Name="btnSearch" Content="Search" Canvas.Left="187" Canvas.Top="57" HorizontalAlignment="Center" Height="25" Width="47" VerticalAlignment="Top" Click="btnSearch_Click" />
+        <Label Content="Dates" Canvas.Left="84" Canvas.Top="94" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <DatePicker x:Name="sctStartDate" Canvas.Left="84" Canvas.Top="120" HorizontalAlignment="Center" VerticalAlignment="Top" Width="150" Height="25" SelectedDateFormat="Long" SelectedDateChanged="sctStartDate_SelectedDateChanged" />
+        <Label Content="Start Date:" Canvas.Left="18" Canvas.Top="119" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <Label Content="End Date:" Canvas.Left="23" Canvas.Top="150" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <DatePicker x:Name="sctEndDate" Canvas.Left="84" Canvas.Top="151" HorizontalAlignment="Center" VerticalAlignment="Top" Width="150" Height="26" SelectedDateFormat="Long" />
+        <Button x:Name="btnBillByDate" Content="Get Bill By Date" Canvas.Left="84" Canvas.Top="186" Width="150" HorizontalAlignment="Center" Height="25" VerticalAlignment="Top" Click="btnBillByDate_Click"/>
+        <Label Content="Bill ID:" Canvas.Left="41" Canvas.Top="229" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtBillID" Height="26" Canvas.Left="84" Canvas.Top="231" Width="75" VerticalAlignment="Center" HorizontalAlignment="Center" VerticalContentAlignment="Center" />
+        <Button x:Name="btnFind" Content="Find" Height="26" Canvas.Left="164" Canvas.Top="231" Width="70" HorizontalAlignment="Center" VerticalAlignment="Top" Click="btnFind_Click"/>
+        <Label Content="Client:" Canvas.Left="41" Canvas.Top="268" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <Label Content="Category:" Canvas.Left="23" Canvas.Top="304" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <Label Content="Attorney:" Canvas.Left="25" Canvas.Top="342"/>
+        <Label Content="Fee:" Canvas.Left="53" Canvas.Top="380"/>
+        <TextBox x:Name="txtClientFullName" Canvas.Left="84" TextWrapping="Wrap" Canvas.Top="269" Width="150" Height="25" HorizontalAlignment="Left" VerticalAlignment="Center" VerticalContentAlignment="Center" IsEnabled="False" />
+        <TextBox x:Name="txtCategoryName" Canvas.Left="84" TextWrapping="Wrap" Canvas.Top="305" Width="150" Height="25" HorizontalAlignment="Left" VerticalAlignment="Center" VerticalContentAlignment="Center" IsEnabled="False" />
+        <TextBox x:Name="txtAttorneyFullName" Canvas.Left="84" TextWrapping="Wrap" Canvas.Top="343" Width="150" Height="25" HorizontalAlignment="Left" VerticalAlignment="Center" VerticalContentAlignment="Center" IsEnabled="False" />
+        <TextBox x:Name="txtClientFee" Canvas.Left="84" TextWrapping="Wrap" Canvas.Top="381" Width="150" Height="25" HorizontalAlignment="Left" VerticalAlignment="Center" VerticalContentAlignment="Center" IsEnabled="False" />
+        <Button x:Name="btnGetAllBills" Content="Get All Bills" Height="25" Canvas.Left="252" Canvas.Top="23" Width="225" HorizontalAlignment="Center" VerticalAlignment="Center" Click="btnGetAllBills_Click"/>
+        <Button x:Name="btnClearFields" Content="Clear Fields" Canvas.Left="493" Canvas.Top="23" Width="225" Height="25" HorizontalAlignment="Left" VerticalAlignment="Center" Click="btnClearFields_Click"/>
+        <DataGrid x:Name="grdBills" Height="339" Canvas.Left="252" Canvas.Top="67" Width="466" d:ItemsSource="{d:SampleData ItemCount=5}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+    </Canvas>
+</Window>

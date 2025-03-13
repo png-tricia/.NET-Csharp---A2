@@ -1,0 +1,518 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="LawFirmDBDataSet" targetNamespace="http://tempuri.org/LawFirmDBDataSet.xsd" xmlns:mstns="http://tempuri.org/LawFirmDBDataSet.xsd" xmlns="http://tempuri.org/LawFirmDBDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection ConnectionStringObject="Data Source=(LocalDB)\MSSQLLocalDB;Initial Catalog=LawFirmDB;Integrated Security=True;Encrypt=False" IsAppSettingsProperty="false" Modifier="Assembly" Name="p_riando\localdb#ae5d4e26.LawFirmDB.dbo" ParameterPrefix="@" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="AllBillingsTableAdapter" GeneratorDataComponentClassName="AllBillingsTableAdapter" Name="AllBillings" UserDataComponentName="AllBillingsTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="p_riando\localdb#ae5d4e26.LawFirmDB.dbo" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillAllBillings" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetAllBillings" GeneratorSourceName="FillAllBillings" GetMethodModifier="Public" GetMethodName="GetAllBillings" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetAllBillings" UserSourceName="FillAllBillings">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT Billing.BillingID AS [Billing ID], FORMAT(Billing.Date, 'dd-MMM-yyyy') AS Date, Categories.Category, Rates.Rate, Billing.Hours, Clients.FirstName AS [Client First Name], Clients.LastName AS [Client Last Name], Attorneys.FirstName AS [Attorney First Name], Attorneys.LastName AS [Attorney Last Name]
+FROM     Attorneys INNER JOIN
+                  Billing ON Attorneys.AttorneyID = Billing.AttorneyID INNER JOIN
+                  Clients ON Billing.ClientID = Clients.ClientID INNER JOIN
+                  Categories ON Billing.CategoryID = Categories.CategoryID INNER JOIN
+                  Rates ON Billing.RateID = Rates.RateID</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Billing ID" DataSetColumn="Billing ID" />
+              <Mapping SourceColumn="Date" DataSetColumn="Date" />
+              <Mapping SourceColumn="Category" DataSetColumn="Category" />
+              <Mapping SourceColumn="Rate" DataSetColumn="Rate" />
+              <Mapping SourceColumn="Hours" DataSetColumn="Hours" />
+              <Mapping SourceColumn="Client First Name" DataSetColumn="Client First Name" />
+              <Mapping SourceColumn="Client Last Name" DataSetColumn="Client Last Name" />
+              <Mapping SourceColumn="Attorney First Name" DataSetColumn="Attorney First Name" />
+              <Mapping SourceColumn="Attorney Last Name" DataSetColumn="Attorney Last Name" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="FindClientByNameTableAdapter" GeneratorDataComponentClassName="FindClientByNameTableAdapter" Name="FindClientByName" UserDataComponentName="FindClientByNameTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="p_riando\localdb#ae5d4e26.LawFirmDB.dbo" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillClientByName" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetClientByName" GeneratorSourceName="FillClientByName" GetMethodModifier="Public" GetMethodName="GetClientByName" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetClientByName" UserSourceName="FillClientByName">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT Billing.BillingID AS [Billing ID], FORMAT(Billing.Date, 'dd-MMM-yyyy') AS Date, Categories.Category, Rates.Rate, Billing.Hours, Clients.FirstName AS [Client First Name], Clients.LastName AS [Client Last Name], Attorneys.FirstName AS [Attorney First Name], Attorneys.LastName AS [Attorney Last Name]
+FROM     Attorneys INNER JOIN
+                  Billing ON Attorneys.AttorneyID = Billing.AttorneyID INNER JOIN
+                  Clients ON Billing.ClientID = Clients.ClientID INNER JOIN
+                  Categories ON Billing.CategoryID = Categories.CategoryID INNER JOIN
+                  Rates ON Billing.RateID = Rates.RateID</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Billing ID" DataSetColumn="Billing ID" />
+              <Mapping SourceColumn="Date" DataSetColumn="Date" />
+              <Mapping SourceColumn="Category" DataSetColumn="Category" />
+              <Mapping SourceColumn="Rate" DataSetColumn="Rate" />
+              <Mapping SourceColumn="Hours" DataSetColumn="Hours" />
+              <Mapping SourceColumn="Client First Name" DataSetColumn="Client First Name" />
+              <Mapping SourceColumn="Client Last Name" DataSetColumn="Client Last Name" />
+              <Mapping SourceColumn="Attorney First Name" DataSetColumn="Attorney First Name" />
+              <Mapping SourceColumn="Attorney Last Name" DataSetColumn="Attorney Last Name" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="p_riando\localdb#ae5d4e26.LawFirmDB.dbo" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillBillingByClientName" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetBillingByClientName" GeneratorSourceName="FillBillingByClientName" GetMethodModifier="Public" GetMethodName="GetBillingByClientName" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetBillingByClientName" UserSourceName="FillBillingByClientName">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT Billing.BillingID AS [Billing ID], FORMAT(Billing.Date, 'dd-MMM-yyyy') AS Date, Categories.Category, Rates.Rate, Billing.Hours, Clients.FirstName AS [Client First Name], Clients.LastName AS [Client Last Name], Attorneys.FirstName AS [Attorney First Name], Attorneys.LastName AS [Attorney Last Name]
+FROM     Attorneys INNER JOIN
+                  Billing ON Attorneys.AttorneyID = Billing.AttorneyID INNER JOIN
+                  Clients ON Billing.ClientID = Clients.ClientID INNER JOIN
+                  Categories ON Billing.CategoryID = Categories.CategoryID INNER JOIN
+                  Rates ON Billing.RateID = Rates.RateID
+WHERE (Clients.FirstName LIKE '%' + @ClientName + '%') OR (Clients.LastName LIKE '%' + @ClientName + '%')</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="ClientName" ColumnName="FirstName" DataSourceName="LawFirmDB.dbo.Clients" DataTypeServer="nvarchar(50)" DbType="String" Direction="Input" ParameterName="@ClientName" Precision="0" ProviderType="NVarChar" Scale="0" Size="50" SourceColumn="Client First Name" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="FindClientByIdTableAdapter" GeneratorDataComponentClassName="FindClientByIdTableAdapter" Name="FindClientById" UserDataComponentName="FindClientByIdTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="p_riando\localdb#ae5d4e26.LawFirmDB.dbo" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillClientById" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetClientById" GeneratorSourceName="FillClientById" GetMethodModifier="Public" GetMethodName="GetClientById" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetClientById" UserSourceName="FillClientById">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT Billing.BillingID, FORMAT(Billing.Date, 'dd-MMM-yyyy') AS Date, Categories.Category, Rates.Rate, Billing.Hours, Clients.FirstName AS [Client First Name], Clients.LastName AS [Client Last Name], 
+                  Attorneys.FirstName AS [Attorney First Name], Attorneys.LastName AS [Attorney Last Name]
+FROM     Attorneys INNER JOIN
+                  Billing ON Attorneys.AttorneyID = Billing.AttorneyID INNER JOIN
+                  Clients ON Billing.ClientID = Clients.ClientID INNER JOIN
+                  Categories ON Billing.CategoryID = Categories.CategoryID INNER JOIN
+                  Rates ON Billing.RateID = Rates.RateID</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="BillingID" DataSetColumn="BillingID" />
+              <Mapping SourceColumn="Date" DataSetColumn="Date" />
+              <Mapping SourceColumn="Category" DataSetColumn="Category" />
+              <Mapping SourceColumn="Rate" DataSetColumn="Rate" />
+              <Mapping SourceColumn="Hours" DataSetColumn="Hours" />
+              <Mapping SourceColumn="Client First Name" DataSetColumn="Client First Name" />
+              <Mapping SourceColumn="Client Last Name" DataSetColumn="Client Last Name" />
+              <Mapping SourceColumn="Attorney First Name" DataSetColumn="Attorney First Name" />
+              <Mapping SourceColumn="Attorney Last Name" DataSetColumn="Attorney Last Name" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="AttorneysTableAdapter" GeneratorDataComponentClassName="AttorneysTableAdapter" Name="Attorneys" UserDataComponentName="AttorneysTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="p_riando\localdb#ae5d4e26.LawFirmDB.dbo" DbObjectName="LawFirmDB.dbo.Attorneys" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillAttorneys" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetAttorneys" GeneratorSourceName="FillAttorneys" GetMethodModifier="Public" GetMethodName="GetAttorneys" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetAttorneys" UserSourceName="FillAttorneys">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT AttorneyID, LastName
+FROM     Attorneys</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="AttorneyID" DataSetColumn="AttorneyID" />
+              <Mapping SourceColumn="LastName" DataSetColumn="LastName" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="BillWithAttTableAdapter" GeneratorDataComponentClassName="BillWithAttTableAdapter" Name="BillWithAtt" UserDataComponentName="BillWithAttTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="p_riando\localdb#ae5d4e26.LawFirmDB.dbo" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillBillingWithAttorney" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetBillingWithAttorney" GeneratorSourceName="FillBillingWithAttorney" GetMethodModifier="Public" GetMethodName="GetBillingWithAttorney" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetBillingWithAttorney" UserSourceName="FillBillingWithAttorney">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT Billing.BillingID AS [Billing ID], FORMAT(Billing.Date, 'dd-MMM-yyyy') AS Date, Categories.Category, Rates.Rate, Billing.Hours, Clients.FirstName AS [Client First Name], Clients.LastName AS [Client Last Name], Attorneys.FirstName AS [Attorney First Name], Attorneys.LastName AS [Attorney Last Name]
+FROM     Attorneys INNER JOIN
+                  Billing ON Attorneys.AttorneyID = Billing.AttorneyID INNER JOIN
+                  Clients ON Billing.ClientID = Clients.ClientID INNER JOIN
+                  Categories ON Billing.CategoryID = Categories.CategoryID INNER JOIN
+                  Rates ON Billing.RateID = Rates.RateID
+WHERE (Billing.AttorneyID = @attId)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="attId" ColumnName="AttorneyID" DataSourceName="LawFirmDB.dbo.Billing" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@attId" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="AttorneyID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Billing ID" DataSetColumn="Billing ID" />
+              <Mapping SourceColumn="Date" DataSetColumn="Date" />
+              <Mapping SourceColumn="Category" DataSetColumn="Category" />
+              <Mapping SourceColumn="Rate" DataSetColumn="Rate" />
+              <Mapping SourceColumn="Hours" DataSetColumn="Hours" />
+              <Mapping SourceColumn="Client First Name" DataSetColumn="Client First Name" />
+              <Mapping SourceColumn="Client Last Name" DataSetColumn="Client Last Name" />
+              <Mapping SourceColumn="Attorney First Name" DataSetColumn="Attorney First Name" />
+              <Mapping SourceColumn="Attorney Last Name" DataSetColumn="Attorney Last Name" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="FindBillByDateTableAdapter" GeneratorDataComponentClassName="FindBillByDateTableAdapter" Name="FindBillByDate" UserDataComponentName="FindBillByDateTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="p_riando\localdb#ae5d4e26.LawFirmDB.dbo" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillClientByDate" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetClientByDate" GeneratorSourceName="FillClientByDate" GetMethodModifier="Public" GetMethodName="GetClientByDate" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetClientByDate" UserSourceName="FillClientByDate">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT Billing.BillingID, FORMAT(Billing.Date, 'dd-MMM-yyyy') AS Date, Categories.Category, Rates.Rate, Billing.Hours, Clients.FirstName AS [Client First Name], Clients.LastName AS [Client Last Name], 
+                  Attorneys.FirstName AS [Attorney First Name], Attorneys.LastName AS [Attorney Last Name]
+FROM     Attorneys INNER JOIN
+                  Billing ON Attorneys.AttorneyID = Billing.AttorneyID INNER JOIN
+                  Clients ON Billing.ClientID = Clients.ClientID INNER JOIN
+                  Categories ON Billing.CategoryID = Categories.CategoryID INNER JOIN
+                  Rates ON Billing.RateID = Rates.RateID</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="BillingID" DataSetColumn="BillingID" />
+              <Mapping SourceColumn="Date" DataSetColumn="Date" />
+              <Mapping SourceColumn="Category" DataSetColumn="Category" />
+              <Mapping SourceColumn="Rate" DataSetColumn="Rate" />
+              <Mapping SourceColumn="Hours" DataSetColumn="Hours" />
+              <Mapping SourceColumn="Client First Name" DataSetColumn="Client First Name" />
+              <Mapping SourceColumn="Client Last Name" DataSetColumn="Client Last Name" />
+              <Mapping SourceColumn="Attorney First Name" DataSetColumn="Attorney First Name" />
+              <Mapping SourceColumn="Attorney Last Name" DataSetColumn="Attorney Last Name" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="p_riando\localdb#ae5d4e26.LawFirmDB.dbo" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillBillByDate" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetBillByDate" GeneratorSourceName="FillBillByDate" GetMethodModifier="Public" GetMethodName="GetBillByDate" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetBillByDate" UserSourceName="FillBillByDate">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT Billing.BillingID, FORMAT(Billing.Date, 'dd-MMM-yyyy') AS Date, Categories.Category, Rates.Rate, Billing.Hours, Clients.FirstName AS [Client First Name], Clients.LastName AS [Client Last Name], 
+                  Attorneys.FirstName AS [Attorney First Name], Attorneys.LastName AS [Attorney Last Name]
+FROM     Attorneys INNER JOIN
+                  Billing ON Attorneys.AttorneyID = Billing.AttorneyID INNER JOIN
+                  Clients ON Billing.ClientID = Clients.ClientID INNER JOIN
+                  Categories ON Billing.CategoryID = Categories.CategoryID INNER JOIN
+                  Rates ON Billing.RateID = Rates.RateID
+WHERE (Billing.Date BETWEEN @StartDate AND @EndDate)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="StartDate" ColumnName="Date" DataSourceName="LawFirmDB.dbo.Billing" DataTypeServer="date" DbType="AnsiString" Direction="Input" ParameterName="@StartDate" Precision="0" ProviderType="Date" Scale="0" Size="3" SourceColumn="Date" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="EndDate" ColumnName="Date" DataSourceName="LawFirmDB.dbo.Billing" DataTypeServer="date" DbType="AnsiString" Direction="Input" ParameterName="@EndDate" Precision="0" ProviderType="Date" Scale="0" Size="3" SourceColumn="Date" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="LawFirmDBDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="LawFirmDBDataSet" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="LawFirmDBDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="AllBillings" msprop:Generator_RowEvHandlerName="AllBillingsRowChangeEventHandler" msprop:Generator_RowDeletedName="AllBillingsRowDeleted" msprop:Generator_RowDeletingName="AllBillingsRowDeleting" msprop:Generator_RowEvArgName="AllBillingsRowChangeEvent" msprop:Generator_TablePropName="AllBillings" msprop:Generator_RowChangedName="AllBillingsRowChanged" msprop:Generator_UserTableName="AllBillings" msprop:Generator_RowChangingName="AllBillingsRowChanging" msprop:Generator_RowClassName="AllBillingsRow" msprop:Generator_TableClassName="AllBillingsDataTable" msprop:Generator_TableVarName="tableAllBillings">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Billing_x0020_ID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInTable="Billing_IDColumn" msprop:Generator_ColumnPropNameInRow="Billing_ID" msprop:Generator_UserColumnName="Billing ID" msprop:Generator_ColumnVarNameInTable="columnBilling_ID" type="xs:int" />
+              <xs:element name="Date" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInTable="DateColumn" msprop:Generator_ColumnPropNameInRow="Date" msprop:Generator_UserColumnName="Date" msprop:Generator_ColumnVarNameInTable="columnDate" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="4000" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Category" msprop:Generator_ColumnPropNameInTable="CategoryColumn" msprop:Generator_ColumnPropNameInRow="Category" msprop:Generator_UserColumnName="Category" msprop:Generator_ColumnVarNameInTable="columnCategory" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Rate" msprop:Generator_ColumnPropNameInTable="RateColumn" msprop:Generator_ColumnPropNameInRow="Rate" msprop:Generator_UserColumnName="Rate" msprop:Generator_ColumnVarNameInTable="columnRate" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Hours" msprop:Generator_ColumnPropNameInTable="HoursColumn" msprop:Generator_ColumnPropNameInRow="Hours" msprop:Generator_UserColumnName="Hours" msprop:Generator_ColumnVarNameInTable="columnHours" type="xs:double" minOccurs="0" />
+              <xs:element name="Client_x0020_First_x0020_Name" msprop:Generator_ColumnPropNameInTable="Client_First_NameColumn" msprop:Generator_ColumnPropNameInRow="Client_First_Name" msprop:Generator_UserColumnName="Client First Name" msprop:Generator_ColumnVarNameInTable="columnClient_First_Name" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Client_x0020_Last_x0020_Name" msprop:Generator_ColumnPropNameInTable="Client_Last_NameColumn" msprop:Generator_ColumnPropNameInRow="Client_Last_Name" msprop:Generator_UserColumnName="Client Last Name" msprop:Generator_ColumnVarNameInTable="columnClient_Last_Name" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Attorney_x0020_First_x0020_Name" msprop:Generator_ColumnPropNameInTable="Attorney_First_NameColumn" msprop:Generator_ColumnPropNameInRow="Attorney_First_Name" msprop:Generator_UserColumnName="Attorney First Name" msprop:Generator_ColumnVarNameInTable="columnAttorney_First_Name" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Attorney_x0020_Last_x0020_Name" msprop:Generator_ColumnPropNameInTable="Attorney_Last_NameColumn" msprop:Generator_ColumnPropNameInRow="Attorney_Last_Name" msprop:Generator_UserColumnName="Attorney Last Name" msprop:Generator_ColumnVarNameInTable="columnAttorney_Last_Name" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="FindClientByName" msprop:Generator_RowEvHandlerName="FindClientByNameRowChangeEventHandler" msprop:Generator_RowDeletedName="FindClientByNameRowDeleted" msprop:Generator_RowDeletingName="FindClientByNameRowDeleting" msprop:Generator_RowEvArgName="FindClientByNameRowChangeEvent" msprop:Generator_TablePropName="FindClientByName" msprop:Generator_RowChangedName="FindClientByNameRowChanged" msprop:Generator_UserTableName="FindClientByName" msprop:Generator_RowChangingName="FindClientByNameRowChanging" msprop:Generator_RowClassName="FindClientByNameRow" msprop:Generator_TableClassName="FindClientByNameDataTable" msprop:Generator_TableVarName="tableFindClientByName">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Billing_x0020_ID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInTable="Billing_IDColumn" msprop:Generator_ColumnPropNameInRow="Billing_ID" msprop:Generator_UserColumnName="Billing ID" msprop:Generator_ColumnVarNameInTable="columnBilling_ID" type="xs:int" />
+              <xs:element name="Date" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInTable="DateColumn" msprop:Generator_ColumnPropNameInRow="Date" msprop:Generator_UserColumnName="Date" msprop:Generator_ColumnVarNameInTable="columnDate" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="4000" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Category" msprop:Generator_ColumnPropNameInTable="CategoryColumn" msprop:Generator_ColumnPropNameInRow="Category" msprop:Generator_UserColumnName="Category" msprop:Generator_ColumnVarNameInTable="columnCategory" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Rate" msprop:Generator_ColumnPropNameInTable="RateColumn" msprop:Generator_ColumnPropNameInRow="Rate" msprop:Generator_UserColumnName="Rate" msprop:Generator_ColumnVarNameInTable="columnRate" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Hours" msprop:Generator_ColumnPropNameInTable="HoursColumn" msprop:Generator_ColumnPropNameInRow="Hours" msprop:Generator_UserColumnName="Hours" msprop:Generator_ColumnVarNameInTable="columnHours" type="xs:double" minOccurs="0" />
+              <xs:element name="Client_x0020_First_x0020_Name" msprop:Generator_ColumnPropNameInTable="Client_First_NameColumn" msprop:Generator_ColumnPropNameInRow="Client_First_Name" msprop:Generator_UserColumnName="Client First Name" msprop:Generator_ColumnVarNameInTable="columnClient_First_Name" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Client_x0020_Last_x0020_Name" msprop:Generator_ColumnPropNameInTable="Client_Last_NameColumn" msprop:Generator_ColumnPropNameInRow="Client_Last_Name" msprop:Generator_UserColumnName="Client Last Name" msprop:Generator_ColumnVarNameInTable="columnClient_Last_Name" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Attorney_x0020_First_x0020_Name" msprop:Generator_ColumnPropNameInTable="Attorney_First_NameColumn" msprop:Generator_ColumnPropNameInRow="Attorney_First_Name" msprop:Generator_UserColumnName="Attorney First Name" msprop:Generator_ColumnVarNameInTable="columnAttorney_First_Name" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Attorney_x0020_Last_x0020_Name" msprop:Generator_ColumnPropNameInTable="Attorney_Last_NameColumn" msprop:Generator_ColumnPropNameInRow="Attorney_Last_Name" msprop:Generator_UserColumnName="Attorney Last Name" msprop:Generator_ColumnVarNameInTable="columnAttorney_Last_Name" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="FindClientById" msprop:Generator_RowClassName="FindClientByIdRow" msprop:Generator_RowEvHandlerName="FindClientByIdRowChangeEventHandler" msprop:Generator_RowDeletedName="FindClientByIdRowDeleted" msprop:Generator_RowDeletingName="FindClientByIdRowDeleting" msprop:Generator_RowEvArgName="FindClientByIdRowChangeEvent" msprop:Generator_TablePropName="FindClientById" msprop:Generator_RowChangedName="FindClientByIdRowChanged" msprop:Generator_UserTableName="FindClientById" msprop:Generator_RowChangingName="FindClientByIdRowChanging" msprop:Generator_TableClassName="FindClientByIdDataTable" msprop:Generator_TableVarName="tableFindClientById">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="BillingID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_UserColumnName="BillingID" msprop:Generator_ColumnPropNameInTable="BillingIDColumn" msprop:Generator_ColumnPropNameInRow="BillingID" msprop:Generator_ColumnVarNameInTable="columnBillingID" type="xs:int" />
+              <xs:element name="Date" msdata:ReadOnly="true" msprop:Generator_UserColumnName="Date" msprop:Generator_ColumnPropNameInTable="DateColumn" msprop:Generator_ColumnPropNameInRow="Date" msprop:Generator_ColumnVarNameInTable="columnDate" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="4000" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Category" msprop:Generator_UserColumnName="Category" msprop:Generator_ColumnPropNameInTable="CategoryColumn" msprop:Generator_ColumnPropNameInRow="Category" msprop:Generator_ColumnVarNameInTable="columnCategory" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Rate" msprop:Generator_UserColumnName="Rate" msprop:Generator_ColumnPropNameInTable="RateColumn" msprop:Generator_ColumnPropNameInRow="Rate" msprop:Generator_ColumnVarNameInTable="columnRate" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Hours" msprop:Generator_UserColumnName="Hours" msprop:Generator_ColumnPropNameInTable="HoursColumn" msprop:Generator_ColumnPropNameInRow="Hours" msprop:Generator_ColumnVarNameInTable="columnHours" type="xs:double" minOccurs="0" />
+              <xs:element name="Client_x0020_First_x0020_Name" msprop:Generator_UserColumnName="Client First Name" msprop:Generator_ColumnPropNameInTable="Client_First_NameColumn" msprop:Generator_ColumnPropNameInRow="Client_First_Name" msprop:Generator_ColumnVarNameInTable="columnClient_First_Name" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Client_x0020_Last_x0020_Name" msprop:Generator_UserColumnName="Client Last Name" msprop:Generator_ColumnPropNameInTable="Client_Last_NameColumn" msprop:Generator_ColumnPropNameInRow="Client_Last_Name" msprop:Generator_ColumnVarNameInTable="columnClient_Last_Name" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Attorney_x0020_First_x0020_Name" msprop:Generator_UserColumnName="Attorney First Name" msprop:Generator_ColumnPropNameInTable="Attorney_First_NameColumn" msprop:Generator_ColumnPropNameInRow="Attorney_First_Name" msprop:Generator_ColumnVarNameInTable="columnAttorney_First_Name" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Attorney_x0020_Last_x0020_Name" msprop:Generator_UserColumnName="Attorney Last Name" msprop:Generator_ColumnPropNameInTable="Attorney_Last_NameColumn" msprop:Generator_ColumnPropNameInRow="Attorney_Last_Name" msprop:Generator_ColumnVarNameInTable="columnAttorney_Last_Name" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Attorneys" msprop:Generator_RowClassName="AttorneysRow" msprop:Generator_RowEvHandlerName="AttorneysRowChangeEventHandler" msprop:Generator_RowDeletedName="AttorneysRowDeleted" msprop:Generator_RowDeletingName="AttorneysRowDeleting" msprop:Generator_RowEvArgName="AttorneysRowChangeEvent" msprop:Generator_TablePropName="Attorneys" msprop:Generator_RowChangedName="AttorneysRowChanged" msprop:Generator_UserTableName="Attorneys" msprop:Generator_RowChangingName="AttorneysRowChanging" msprop:Generator_TableClassName="AttorneysDataTable" msprop:Generator_TableVarName="tableAttorneys">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="AttorneyID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_UserColumnName="AttorneyID" msprop:Generator_ColumnPropNameInTable="AttorneyIDColumn" msprop:Generator_ColumnPropNameInRow="AttorneyID" msprop:Generator_ColumnVarNameInTable="columnAttorneyID" type="xs:int" />
+              <xs:element name="LastName" msprop:Generator_UserColumnName="LastName" msprop:Generator_ColumnPropNameInTable="LastNameColumn" msprop:Generator_ColumnPropNameInRow="LastName" msprop:Generator_ColumnVarNameInTable="columnLastName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="BillWithAtt" msprop:Generator_RowClassName="BillWithAttRow" msprop:Generator_RowEvHandlerName="BillWithAttRowChangeEventHandler" msprop:Generator_RowDeletedName="BillWithAttRowDeleted" msprop:Generator_RowDeletingName="BillWithAttRowDeleting" msprop:Generator_RowEvArgName="BillWithAttRowChangeEvent" msprop:Generator_TablePropName="BillWithAtt" msprop:Generator_RowChangedName="BillWithAttRowChanged" msprop:Generator_UserTableName="BillWithAtt" msprop:Generator_RowChangingName="BillWithAttRowChanging" msprop:Generator_TableClassName="BillWithAttDataTable" msprop:Generator_TableVarName="tableBillWithAtt">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Billing_x0020_ID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_UserColumnName="Billing ID" msprop:Generator_ColumnPropNameInTable="Billing_IDColumn" msprop:Generator_ColumnPropNameInRow="Billing_ID" msprop:Generator_ColumnVarNameInTable="columnBilling_ID" type="xs:int" />
+              <xs:element name="Date" msdata:ReadOnly="true" msprop:Generator_UserColumnName="Date" msprop:Generator_ColumnPropNameInTable="DateColumn" msprop:Generator_ColumnPropNameInRow="Date" msprop:Generator_ColumnVarNameInTable="columnDate" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="4000" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Category" msprop:Generator_UserColumnName="Category" msprop:Generator_ColumnPropNameInTable="CategoryColumn" msprop:Generator_ColumnPropNameInRow="Category" msprop:Generator_ColumnVarNameInTable="columnCategory" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Rate" msprop:Generator_UserColumnName="Rate" msprop:Generator_ColumnPropNameInTable="RateColumn" msprop:Generator_ColumnPropNameInRow="Rate" msprop:Generator_ColumnVarNameInTable="columnRate" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Hours" msprop:Generator_UserColumnName="Hours" msprop:Generator_ColumnPropNameInTable="HoursColumn" msprop:Generator_ColumnPropNameInRow="Hours" msprop:Generator_ColumnVarNameInTable="columnHours" type="xs:double" minOccurs="0" />
+              <xs:element name="Client_x0020_First_x0020_Name" msprop:Generator_UserColumnName="Client First Name" msprop:Generator_ColumnPropNameInTable="Client_First_NameColumn" msprop:Generator_ColumnPropNameInRow="Client_First_Name" msprop:Generator_ColumnVarNameInTable="columnClient_First_Name" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Client_x0020_Last_x0020_Name" msprop:Generator_UserColumnName="Client Last Name" msprop:Generator_ColumnPropNameInTable="Client_Last_NameColumn" msprop:Generator_ColumnPropNameInRow="Client_Last_Name" msprop:Generator_ColumnVarNameInTable="columnClient_Last_Name" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Attorney_x0020_First_x0020_Name" msprop:Generator_UserColumnName="Attorney First Name" msprop:Generator_ColumnPropNameInTable="Attorney_First_NameColumn" msprop:Generator_ColumnPropNameInRow="Attorney_First_Name" msprop:Generator_ColumnVarNameInTable="columnAttorney_First_Name" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Attorney_x0020_Last_x0020_Name" msprop:Generator_UserColumnName="Attorney Last Name" msprop:Generator_ColumnPropNameInTable="Attorney_Last_NameColumn" msprop:Generator_ColumnPropNameInRow="Attorney_Last_Name" msprop:Generator_ColumnVarNameInTable="columnAttorney_Last_Name" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="FindBillByDate" msprop:Generator_RowEvHandlerName="FindBillByDateRowChangeEventHandler" msprop:Generator_RowDeletedName="FindBillByDateRowDeleted" msprop:Generator_RowDeletingName="FindBillByDateRowDeleting" msprop:Generator_RowEvArgName="FindBillByDateRowChangeEvent" msprop:Generator_TablePropName="FindBillByDate" msprop:Generator_RowChangedName="FindBillByDateRowChanged" msprop:Generator_RowChangingName="FindBillByDateRowChanging" msprop:Generator_TableClassName="FindBillByDateDataTable" msprop:Generator_RowClassName="FindBillByDateRow" msprop:Generator_TableVarName="tableFindBillByDate" msprop:Generator_UserTableName="FindBillByDate">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="BillingID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInRow="BillingID" msprop:Generator_ColumnPropNameInTable="BillingIDColumn" msprop:Generator_ColumnVarNameInTable="columnBillingID" msprop:Generator_UserColumnName="BillingID" type="xs:int" />
+              <xs:element name="Date" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInRow="Date" msprop:Generator_ColumnPropNameInTable="DateColumn" msprop:Generator_ColumnVarNameInTable="columnDate" msprop:Generator_UserColumnName="Date" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="4000" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Category" msprop:Generator_ColumnPropNameInRow="Category" msprop:Generator_ColumnPropNameInTable="CategoryColumn" msprop:Generator_ColumnVarNameInTable="columnCategory" msprop:Generator_UserColumnName="Category" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Rate" msprop:Generator_ColumnPropNameInRow="Rate" msprop:Generator_ColumnPropNameInTable="RateColumn" msprop:Generator_ColumnVarNameInTable="columnRate" msprop:Generator_UserColumnName="Rate" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Hours" msprop:Generator_ColumnPropNameInRow="Hours" msprop:Generator_ColumnPropNameInTable="HoursColumn" msprop:Generator_ColumnVarNameInTable="columnHours" msprop:Generator_UserColumnName="Hours" type="xs:double" minOccurs="0" />
+              <xs:element name="Client_x0020_First_x0020_Name" msprop:Generator_ColumnPropNameInRow="Client_First_Name" msprop:Generator_ColumnPropNameInTable="Client_First_NameColumn" msprop:Generator_ColumnVarNameInTable="columnClient_First_Name" msprop:Generator_UserColumnName="Client First Name" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Client_x0020_Last_x0020_Name" msprop:Generator_ColumnPropNameInRow="Client_Last_Name" msprop:Generator_ColumnPropNameInTable="Client_Last_NameColumn" msprop:Generator_ColumnVarNameInTable="columnClient_Last_Name" msprop:Generator_UserColumnName="Client Last Name" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Attorney_x0020_First_x0020_Name" msprop:Generator_ColumnPropNameInRow="Attorney_First_Name" msprop:Generator_ColumnPropNameInTable="Attorney_First_NameColumn" msprop:Generator_ColumnVarNameInTable="columnAttorney_First_Name" msprop:Generator_UserColumnName="Attorney First Name" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Attorney_x0020_Last_x0020_Name" msprop:Generator_ColumnPropNameInRow="Attorney_Last_Name" msprop:Generator_ColumnPropNameInTable="Attorney_Last_NameColumn" msprop:Generator_ColumnVarNameInTable="columnAttorney_Last_Name" msprop:Generator_UserColumnName="Attorney Last Name" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:AllBillings" />
+      <xs:field xpath="mstns:Billing_x0020_ID" />
+    </xs:unique>
+    <xs:unique name="FindClientByName_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:FindClientByName" />
+      <xs:field xpath="mstns:Billing_x0020_ID" />
+    </xs:unique>
+    <xs:unique name="FindClientById_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:FindClientById" />
+      <xs:field xpath="mstns:BillingID" />
+    </xs:unique>
+    <xs:unique name="Attorneys_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Attorneys" />
+      <xs:field xpath="mstns:AttorneyID" />
+    </xs:unique>
+    <xs:unique name="BillWithAtt_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:BillWithAtt" />
+      <xs:field xpath="mstns:Billing_x0020_ID" />
+    </xs:unique>
+    <xs:unique name="FindBillByDate_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:FindBillByDate" />
+      <xs:field xpath="mstns:BillingID" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>
